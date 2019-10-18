@@ -1,4 +1,4 @@
-FROM MAVEN:3.6-jdk-8-alpine AS builder
+FROM maven:3.6-jdk-8-alpine AS builder
 WORKDIR /app
 COPY pom.xml .
 RUN mvn -e -B dependency:resolve
