@@ -16,7 +16,7 @@ ENV https_proxy http://atl1webproxlb.corp.secureworks.net:3128
 #  rm apache-maven-$MAVEN_VERSION-bin.tar.gz && \
 #  mv apache-maven-$MAVEN_VERSION /usr/lib/mvn
 
-COPY maven-settings.xml /usr/lib/mvn/conf/settings.xml
+#COPY maven-settings.xml /usr/lib/mvn/conf/settings.xml
 
 #RUN mvn -e -B dependency:resolve
 #COPY src ./src
