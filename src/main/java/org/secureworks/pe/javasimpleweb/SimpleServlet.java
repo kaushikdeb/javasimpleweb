@@ -17,6 +17,25 @@ import org.apache.http.util.EntityUtils;
 
 @SuppressWarnings("serial")
 public class SimpleServlet extends HttpServlet {
+	
+	private String TOP_HTML_TEXT = "<!DOCTYPE html>\r\n" + 
+			"<html lang=\"en\">\r\n" + 
+			"<head>\r\n" + 
+			"  <title>PE Java Simple Web</title>\r\n" + 
+			"  <meta charset=\"utf-8\">\r\n" + 
+			"  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
+			"  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n" + 
+			"  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n" + 
+			"  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\r\n" + 
+			"</head>\r\n" + 
+			"<body>\r\n" + 
+			"\r\n" + 
+			"<div class=\"container\">";
+	
+	private String BOTTOM_HTML_TEXT = "</div>\r\n" + 
+			"<button onclick=\"goBack()\">Go Back</button>" + 
+			"</body>\r\n" + 
+			"</html>";
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException
@@ -29,12 +48,7 @@ public class SimpleServlet extends HttpServlet {
     	
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>PE Java Simple Web</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>PE Jersey Simple Rest</h1>");
+        out.println(TOP_HTML_TEXT);
         
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(restURL);
@@ -59,8 +73,7 @@ public class SimpleServlet extends HttpServlet {
         }
 
 
-        out.println("</body>");
-        out.println("</html>");
+        out.println(BOTTOM_HTML_TEXT);
         
     }
     
