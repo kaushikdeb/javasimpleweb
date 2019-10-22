@@ -31,7 +31,7 @@ public class SimpleServlet extends HttpServlet {
         out.println("<h1>Hello World!</h1>");
         
         CloseableHttpClient httpclient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("http://localhost:8080/javasimpleweb");
+        HttpGet httpGet = new HttpGet("http://jerseysimplerest/myapp/myresource");
         CloseableHttpResponse response1 = httpclient.execute(httpGet);
         // The underlying HTTP connection is still held by the response object
         // to allow the response content to be streamed directly from the network socket.
