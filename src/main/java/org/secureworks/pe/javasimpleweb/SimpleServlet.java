@@ -24,7 +24,7 @@ public class SimpleServlet extends HttpServlet {
     	
     	String text = request.getParameter("text");
     	String hashingAlgorithm = request.getParameter("hashingAlgorithm");
-    	String restURL = "http://jerseysimplerest/myapp/myresource/" + hashingAlgorithm + 
+    	String restURL = "http://jerseysimplerest/myapp/" + hashingAlgorithm + 
     			"/" + text;
     	
         response.setContentType("text/html");
