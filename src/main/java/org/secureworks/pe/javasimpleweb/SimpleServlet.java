@@ -21,17 +21,23 @@ public class SimpleServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException
     {
+    	
+    	String text = request.getParameter("text");
+    	String hashingAlgorithm = request.getParameter("hashingAlgorithm");
+    	String restURL = "http://jerseysimplerest/myapp/myresource/" + hashingAlgorithm + 
+    			"/" + text;
+    	
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<html>");
         out.println("<head>");
-        out.println("<title>Hello World!</title>");
+        out.println("<title>PE Java Simple Web</title>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<h1>Hello World!</h1>");
+        out.println("<h1>PE Jersey Simple Rest</h1>");
         
         CloseableHttpClient httpclient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("http://jerseysimplerest/myapp/myresource");
+        HttpGet httpGet = new HttpGet(restURL);
         CloseableHttpResponse response1 = httpclient.execute(httpGet);
         // The underlying HTTP connection is still held by the response object
         // to allow the response content to be streamed directly from the network socket.

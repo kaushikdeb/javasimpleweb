@@ -11,17 +11,18 @@
 <body>
 
 <div class="container">
-  <h2>Echo Service</h2>
+  <h2>Hashing Text App</h2>
   <form class="form-horizontal" action="/javasimpleweb/echo">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="text">Text to Echo:</label>
+      <label class="control-label col-sm-2" for="text">Text to Hash:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="text" placeholder="Enter any text to echo back" name="text">
+        <input type="text" class="form-control" id="text" placeholder="Enter any text to find MD5 or SHA Hash" name="text">
       </div>
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" name="hashingAlgorithm" value="md5">MD5</button>
+        <button type="submit" class="btn btn-default" name="hashingAlgorithm" value="sha">SHA</button>
       </div>
     </div>
   </form>
